@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body,
 p,
 h1,
@@ -48,6 +51,7 @@ body {
       "header"
       "img"
       "info";
+    grid-template-rows: 90px auto;
   }
 }
 
@@ -73,12 +77,7 @@ body {
   border-radius: 25px;
   background-color: #e74c3c;
   outline: none;
-  margin: 0 20px 0 20px;
-}
-@media (max-width: 720px) {
-  .header input {
-    width: 200px;
-  }
+  margin: 0 20px;
 }
 
 .header button {
@@ -88,6 +87,22 @@ body {
   top: 0;
   right: 12px;
   cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .header {
+    padding: 10px 0;
+  }
+  .header input {
+    width: 200px;
+    margin: 0 10px;
+  }
+  .header a img {
+    width: 20px;
+  }
+  .header button {
+    right: 2px;
+  }
 }
 
 /* img section */
@@ -111,12 +126,14 @@ body {
 }
 @media (max-width: 720px) {
   .info-container {
-    padding: 30px 30px 30px 30px;
+    padding: 20px;
+    align-items: start;
   }
 }
 
 .title {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 .title h1 {
@@ -133,6 +150,12 @@ body {
   line-height: 24px;
   max-width: 300px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 720px) {
+  .title h1 + h1 {
+    margin-left: 20px;
+  }
 }
 
 .sub {
@@ -157,26 +180,35 @@ body {
 }
 
 .stats {
-  margin-top: 20px;
+  margin: 20px 0;
   border-radius: 5px;
   padding: 20px;
   background-color: #aede3e;
   width: 200px;
   font-size: 0.875rem;
-  margin-bottom: 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
 }
 @media (min-width: 720px) and (max-width: 960px) {
+  .stats-container {
+    margin-right: 0;
+  }
   .stats-types {
     flex-direction: column;
   }
   .stats {
     padding: 10px;
+    width: 150px;
   }
 }
 @media (max-width: 720px) {
+  .stats-container {
+    margin-right: 0;
+  }
   .stats-types {
     flex-direction: column;
+  }
+  .stats {
+    padding: 10px;
   }
 }
 
@@ -215,10 +247,10 @@ body {
 .loading.ativo {
   display: block;
   animation: spin ease 0.5s infinite;
-  @media (max-width: 720px) {
-    .loading {
-      top: 20%;
-    }
+}
+@media (max-width: 720px) {
+  .loading {
+    top: 20%;
   }
 }
 
