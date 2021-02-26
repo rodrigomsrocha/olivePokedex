@@ -70,7 +70,7 @@ function fetchPokemons() {
       }, 1000);
       showPokemonInfo(res);
       setColors(res.types);
-      i = data.id;
+      i = res.id;
     });
 }
 
