@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <section class="poke-container">
+      <header class="header">
+        <a class="previous" href="#"
+          ><img src="./img/left-arrow.svg" alt="previous"
+        /></a>
+        <form>
+          <input class="search" type="text" placeholder="Nº / Name" />
+          <button class="search-btn">
+            <img src="./img/pokeball.svg" alt="submit" />
+          </button>
+        </form>
+        <a class="next" href="#"
+          ><img src="./img/right-arrow.svg" alt="previous"
+        /></a>
+      </header>
+      <section class="img">
+        <img src="./img/teste.png" alt="" />
+      </section>
+      <section class="pokemon-info">
+        <div class="title">
+          <h1 class="pokemon-name">Bulbasaur</h1>
+          <h1 class="pokemon-number">#001</h1>
+        </div>
+        <p class="entrie">
+          A strange seed was planted on its <br />
+          back at birth. The plant sprouts <br />
+          and grows with <br />this POKéMON.
+        </p>
+        <section class="stats-types">
+          <div class="stats-container">
+            <h3 class="sub">Stats</h3>
+            <ul class="stats">
+              <li>HP: <span class="hp">45</span></li>
+              <li>Attack: <span class="attack">49</span></li>
+              <li>Defense: <span class="defense">49</span></li>
+              <li>Special Attack: <span class="sp-attack">65</span></li>
+              <li>Special Defense: <span class="sp-defense">65</span></li>
+              <li>Speed: <span class="speed">45</span></li>
+            </ul>
+          </div>
+          <section class="types-container">
+            <h3 class="sub">Types</h3>
+            <div class="types">
+              <div class="type">grass</div>
+              <div class="type">poison</div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+    <script src="js/anime.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

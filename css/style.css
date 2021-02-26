@@ -1,0 +1,165 @@
+body,
+p,
+h1,
+h3,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: Roboto;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* grid estrutura */
+.poke-container {
+  display: grid;
+  grid-template-columns: 3fr minmax(550px, 1fr);
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "header header"
+    "img info";
+  height: 100vh;
+}
+
+/* header */
+.header {
+  box-sizing: border-box;
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.header form {
+  position: relative;
+}
+
+.header input {
+  border: none;
+  font-size: 1.125rem;
+  width: 300px;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background-color: #e74c3c;
+  outline: none;
+  margin: 0 20px 0 20px;
+}
+
+.header button {
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  cursor: pointer;
+}
+
+/* img section */
+.img {
+  display: flex;
+  grid-area: img;
+  justify-content: center;
+  align-items: center;
+  background-color: #176e00;
+}
+
+/* pokemon info */
+.pokemon-info {
+  box-sizing: border-box;
+  grid-area: info;
+  padding: 60px 60px 0 60px;
+  background-color: #80ac31;
+}
+
+.title {
+  display: flex;
+  margin-bottom: 30px;
+}
+.title h1 {
+  color: #176e00;
+  font-weight: normal;
+  font-size: 2.25rem;
+}
+.title h1 + h1 {
+  margin-left: 60px;
+}
+
+.entrie {
+  font-size: 1.125rem;
+  line-height: 24px;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.sub {
+  font-size: 1.5rem;
+  color: #aede3e;
+  font-weight: normal;
+}
+.sub::after {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 1px;
+  background-color: #176e00;
+}
+
+.stats-types {
+  display: flex;
+}
+
+.stats-container {
+  margin-right: 30px;
+}
+
+.stats {
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #aede3e;
+  width: 200px;
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stats li + li::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: #80ac31;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.type {
+  margin-top: 20px;
+  background-color: #aede3e;
+  border-radius: 5px;
+  padding: 2px 0;
+  width: 60px;
+  text-align: center;
+  font-size: 0.875rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+}
+.type:last-child {
+  background-color: #b789aa;
+}
