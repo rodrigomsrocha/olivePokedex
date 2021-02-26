@@ -19,7 +19,7 @@
 
 > https://olivedex.herokuapp.com/
 
-## Libs utilizadas 📚
+## Libs used 📚
 
 - [Anime JS](https://animejs.com/): v3.2.1
 
