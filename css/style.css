@@ -133,7 +133,6 @@ body {
 
 .title {
   display: flex;
-  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 .title h1 {
@@ -197,7 +196,6 @@ body {
   }
   .stats {
     padding: 10px;
-    width: 150px;
   }
 }
 @media (max-width: 720px) {
