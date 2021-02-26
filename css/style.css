@@ -81,11 +81,14 @@ body {
 }
 
 /* pokemon info */
-.pokemon-info {
+.info-container {
   box-sizing: border-box;
   grid-area: info;
   padding: 60px 60px 0 60px;
   background-color: #80ac31;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .title {
@@ -162,4 +165,23 @@ body {
 }
 .type:last-child {
   background-color: #b789aa;
+}
+
+.loading {
+  width: 100px;
+  align-self: center;
+  position: absolute;
+  top: 40%;
+  display: none;
+}
+
+.loading.ativo {
+  display: block;
+  animation: spin ease 0.5s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,5 +1,8 @@
 const pokeInput = document.querySelector(".search");
 const pokeBtn = document.querySelector(".search-btn");
+const infos = document.querySelector(".pokemon-info");
+
+const loading = document.querySelector(".loading");
 
 const pokemonName = document.querySelector(".pokemon-name");
 const pokemonNumber = document.querySelector(".pokemon-number");
@@ -57,9 +60,16 @@ function fetchPokemons() {
     .then((pokemon) => {
       return pokemon.json();
     })
-    .then((data) => {
-      showPokemonInfo(data);
-      setColors(data.types);
+    .then((res) => {
+      showLoading();
+      return res;
+    })
+    .then((res) => {
+      setTimeout(() => {
+        hideLoading();
+      }, 1000);
+      showPokemonInfo(res);
+      setColors(res.types);
       i = data.id;
     });
 }
@@ -76,6 +86,13 @@ function nextPokemon() {
       return data.json();
     })
     .then((res) => {
+      showLoading();
+      return res;
+    })
+    .then((res) => {
+      setTimeout(() => {
+        hideLoading();
+      }, 1000);
       showPokemonInfo(res);
       setColors(res.types);
     });
@@ -89,13 +106,29 @@ function previousPokemon() {
       return data.json();
     })
     .then((res) => {
+      showLoading();
+      return res;
+    })
+    .then((res) => {
+      setTimeout(() => {
+        hideLoading();
+      }, 1000);
       showPokemonInfo(res);
       setColors(res.types);
     });
 }
 
+function showLoading() {
+  loading.classList.add("ativo");
+  infos.style.display = "none";
+}
+function hideLoading() {
+  loading.classList.remove("ativo");
+  infos.style.display = "block";
+}
+
 function setColors(types) {
-  const pokemonInfoContainer = document.querySelector(".pokemon-info");
+  const pokemonInfoContainer = document.querySelector(".info-container");
   const statsContainer = document.querySelector(".stats");
   const subs = document.querySelectorAll(".sub");
   const typesEl = document.querySelectorAll(".type");
@@ -278,7 +311,9 @@ function showPokemonInfo(data) {
 
 function showPokemonName(data) {
   pokemonName.innerText = data.charAt(0).toUpperCase() + data.slice(1);
-  leftAnimation(pokemonName);
+  setTimeout(() => {
+    leftAnimation(pokemonName);
+  }, 1000);
 }
 
 function showPokemonNumber(data) {
@@ -289,7 +324,9 @@ function showPokemonNumber(data) {
   } else {
     pokemonNumber.innerText = `#${data}`;
   }
-  upAnimation(pokemonNumber);
+  setTimeout(() => {
+    upAnimation(pokemonNumber);
+  }, 1000);
 }
 
 function showPokemonEntrie(id) {
@@ -307,7 +344,9 @@ function showPokemonEntrie(id) {
       pokemonEntrie.innerText = entrie[0].flavor_text
         .replace("\n", " ")
         .replace("\f", " ");
-      rigthAnimation(pokemonEntrie);
+      setTimeout(() => {
+        rigthAnimation(pokemonEntrie);
+      }, 1000);
     });
 }
 
@@ -341,7 +380,9 @@ function showPokemonStats(statsArray) {
   spAttack.innerText = statsSpAttack;
   spDefense.innerText = statsSpDefense;
   speed.innerText = statsSpeed;
-  statsAnimation(".stats li");
+  setTimeout(() => {
+    statsAnimation(".stats li");
+  }, 1000);
 }
 
 function showPokemonType(data) {
@@ -350,7 +391,9 @@ function showPokemonType(data) {
   data.forEach((type) => {
     pokemonTypeContainer.innerHTML += `<div class="type">${type.type.name}</div>`;
   });
-  leftAnimation(pokemonTypeContainer);
+  setTimeout(() => {
+    leftAnimation(pokemonTypeContainer);
+  }, 1000);
 }
 
 function showPokemonImg() {
