@@ -36,6 +36,20 @@ body {
     "img info";
   height: 100vh;
 }
+@media (min-width: 720px) and (max-width: 960px) {
+  .poke-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .poke-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "img"
+      "info";
+  }
+}
 
 /* header */
 .header {
@@ -60,6 +74,11 @@ body {
   background-color: #e74c3c;
   outline: none;
   margin: 0 20px 0 20px;
+}
+@media (max-width: 720px) {
+  .header input {
+    width: 200px;
+  }
 }
 
 .header button {
@@ -89,6 +108,11 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+@media (max-width: 720px) {
+  .info-container {
+    padding: 30px 30px 30px 30px;
+  }
 }
 
 .title {
@@ -142,6 +166,19 @@ body {
   margin-bottom: 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
 }
+@media (min-width: 720px) and (max-width: 960px) {
+  .stats-types {
+    flex-direction: column;
+  }
+  .stats {
+    padding: 10px;
+  }
+}
+@media (max-width: 720px) {
+  .stats-types {
+    flex-direction: column;
+  }
+}
 
 .stats li + li::before {
   content: "";
@@ -178,6 +215,11 @@ body {
 .loading.ativo {
   display: block;
   animation: spin ease 0.5s infinite;
+  @media (max-width: 720px) {
+    .loading {
+      top: 20%;
+    }
+  }
 }
 
 @keyframes spin {

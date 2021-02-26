@@ -1,12 +1,12 @@
 <h1 align="center"> Pokedex </h1>
 
-> Project status: incomplete 🚫
+> Project status: complete ✅
 
 ## Project description 🎉
 
 <p align="justify">Pokedex made with <a href="https://pokeapi.co/">pokeapi</a> and using the anime js lib </p>
 <img src="https://img.shields.io/static/v1?label=javascript&message=languages&color=blue&style=flat&logo=javascript"/>
-<img src="https://img.shields.io/static/v1?label=stats&message=In+Progress&color=yellow&style=flat"/>
+<img src="https://img.shields.io/static/v1?label=stats&message=complete&color=green&style=flat"/>
 
 ## Features 🏁
 
